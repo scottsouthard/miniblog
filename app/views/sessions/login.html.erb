@@ -1,0 +1,9 @@
+<h1>Login</h1>
+
+<%= form_for(:session, url: sessions_create_path) do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email, autofocus: true, id: "email", placeholder: "Enter Email" %>
+  <%= f.label :password %>
+  <%= f.password_field :password, id: "pwd", placeholder: "Enter Password" %>
+  <%= f.submit "Login" %>
+<% end %>

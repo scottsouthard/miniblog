@@ -1,0 +1,7 @@
+<%= form_for @post, url: {action: "create"} do |f| %>
+  <%= f.label "Title:" %>
+  <%= f.text_field :title, placeholder: "Enter Title" %>
+  <%= f.label "Content:" %>
+  <%= f.text_field :description, placeholder: "Write your post" %>
+  <%= f.submit "Create Post" %>
+<% end %>

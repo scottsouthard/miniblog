@@ -9,7 +9,27 @@
 
 <body>
 <h1> Scott's Miniblog </h1>
-
+<nav>
+  <ul>
+    <% if logged_in? %>
+      <li>
+        <p>
+          <%= link_to "#{current_user.email}", user_path(current_user) %>
+        </p>
+      </li>
+      <li>
+        <%= link_to "Logout", sessions_logout_path %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to "Register", new_user_path %>
+      </li>
+      <li>
+        <%= link_to "Login", sessions_new_path %>
+      </li>
+    <% end %>
+  </ul>
+</nav>
 <%= yield %>
 
 </body>
